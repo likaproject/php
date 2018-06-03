@@ -2,7 +2,7 @@
 <?php
 
 class Animal {
-
+//main class
    public function __construct($name){
        $this->name = $name;    
    }
@@ -11,7 +11,7 @@ class Animal {
        return $this->name;
     }
 }
-
+//this class extends main one
 class Cat extends Animal {
     
     public function meow(){
