@@ -26,7 +26,6 @@
     <form name="cats" action="#" method="post">
         <input method="post" action="#" name="cats_name" required>
         <button type="submit" name="set_cats_name" value="Enter" >Enter</button>
-        <button type="reset" name="reset_name" value="Reset" >Reset</button>
     </form>
 
 <?php
