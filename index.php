@@ -1,46 +1,74 @@
 <?php
+
 // main class
     class Animal {
-
+        
        public function __construct($name){
            $this->name = $name;    
        }
-
+        
+        public function setName($name){
+			 if(is_string($name)){
+                 $this->name = $name;
+             }
+        }
+        
         public function getName(){
-           return $this->name;
+          return $this->name;
         }
     }
+
 // this class extends main one
     class Cat extends Animal {
 
         public function meow(){
-            echo('<br><h2>Cat '.$this->name.' is saying: " meow!"</h2>');
+            return ('Cat '.$this->name.' is saying meow');
         } 
         
-        public function nocats(){
-            echo('No cats on board.');
-        } 
     }
-?>
-    <!--You can set name of the cat--> 
 
-    <form name="cats" action="#" method="post">
-        <input method="post" action="#" name="cats_name" required>
-        <button type="submit" name="set_cats_name" value="Enter" >Enter</button>
-    </form>
+    $cat = new Cat('dania');
+    echo('<br>'.$cat->meow());
 
-<?php
- 
-    if (empty($_REQUEST['set_cats_name'])) {
-        $name = '';
-        $cat = new Cat($name);
-        $cat->nocats();
-    } else {
-        $name = $_REQUEST['cats_name'];
-        $cat = new Cat($name);
-        $cat->meow();
-    } 
-
+    $cat->setName('garfield');
+    echo('<br>'.$cat->meow());
    
+    $result = '';
+
+    if ($cat->getName() === 'garfield'){
+        $result = 'true'; // returns true
+    } else { 
+        $result = 'false';   
+    }
+echo ('<br><br>'.$result);
+  
+    if ($cat->meow() === 'Cat garfield is saying meow') {
+        $result = 'true'; // returns true
+    } else {
+        $result = 'false';
+    }
+echo ('<br><br>'.$result);
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
